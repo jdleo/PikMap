@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    @IBOutlet weak var topBanner: UIView!
     @IBOutlet weak var imagePickerImg: UIImageView!
     @IBOutlet weak var dropPikBtn: UIButton!
     @IBOutlet weak var pikPop: UIView!
@@ -102,11 +103,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func postPik(_ sender: AnyObject) {
+        topBanner.isHidden = true
         pikPop.isHidden = false
         dropPikBtn.isHidden = true
     }
 
     @IBAction func closePikPop(_ sender: AnyObject) {
+        topBanner.isHidden = false
         pikPop.isHidden = true
         dropPikBtn.isHidden = false
         imagePickerImg.image = UIImage(named: "photobtn.png")

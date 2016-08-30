@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ogP-eF-lSZ">
@@ -81,16 +81,37 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYN-Xs-Eeq">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PikMap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QU-IG-Ycz">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="OV3-iO-deH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.38558148300664508" green="0.51742764075224035" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2QU-IG-Ycz" firstAttribute="top" secondItem="sYN-Xs-Eeq" secondAttribute="topMargin" constant="7" id="7O8-vP-Zt5"/>
+                                    <constraint firstAttribute="height" constant="55" id="PQZ-ep-4ve"/>
+                                    <constraint firstItem="2QU-IG-Ycz" firstAttribute="centerX" secondItem="sYN-Xs-Eeq" secondAttribute="centerX" id="dZy-uG-AS0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ogP-eF-lSZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="28Q-cE-goC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BeK-ql-nWt" secondAttribute="bottom" constant="25" id="2Ew-Ge-wh1"/>
                             <constraint firstItem="BeK-ql-nWt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5SA-Vr-lVU"/>
+                            <constraint firstItem="sYN-Xs-Eeq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7uL-1R-xuW"/>
+                            <constraint firstItem="sYN-Xs-Eeq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QKe-rc-zM5"/>
                             <constraint firstItem="iFp-R1-Dje" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="U1i-8r-azJ"/>
                             <constraint firstItem="iFp-R1-Dje" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a2w-gE-yXJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ogP-eF-lSZ" secondAttribute="bottom" id="ocO-ei-3FY"/>
                             <constraint firstAttribute="trailing" secondItem="ogP-eF-lSZ" secondAttribute="trailing" id="s0k-Qu-Mqg"/>
+                            <constraint firstAttribute="trailing" secondItem="sYN-Xs-Eeq" secondAttribute="trailing" id="yM1-dw-axu"/>
                             <constraint firstItem="ogP-eF-lSZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="z6k-DZ-OLb"/>
                         </constraints>
                     </view>
@@ -99,11 +120,12 @@
                         <outlet property="imagePickerImg" destination="rX5-Js-NBD" id="1MH-Jl-vnc"/>
                         <outlet property="mapView" destination="ogP-eF-lSZ" id="Das-5Q-nhS"/>
                         <outlet property="pikPop" destination="iFp-R1-Dje" id="YYb-Ei-IQW"/>
+                        <outlet property="topBanner" destination="sYN-Xs-Eeq" id="ma9-j6-kQt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135.19999999999999" y="130.88455772113943"/>
+            <point key="canvasLocation" x="133.59999999999999" y="129.98500749625188"/>
         </scene>
     </scenes>
     <resources>
