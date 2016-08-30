@@ -146,7 +146,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func uploadPik(_ sender: AnyObject) {
         if imagePickerImg.image != UIImage(named: "photobtn.png") {
             
-            if let uploadData = UIImagePNGRepresentation(imagePickerImg.image!) {
+            if let uploadData = UIImageJPEGRepresentation(imagePickerImg.image!, 0.2) {
                 let iid = NSUUID().uuidString.lowercased()
                 let imageRef = storageRef.child(iid)
                 imageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
