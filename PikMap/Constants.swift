@@ -12,5 +12,3 @@ import FirebaseStorage
 
 let storage = FIRStorage.storage()
 let storageRef = storage.reference(forURL: "gs://pikmap-f133c.appspot.com")
-
-let imagesRef = storageRef.child("images")

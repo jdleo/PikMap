@@ -19,6 +19,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var pikPop: UIView!
     @IBOutlet weak var mapView: MKMapView!
     
+    var imageData: Any?
+    
     let locationManager = CLLocationManager()
     var mapCentered = false
     var geoFire: GeoFire!
@@ -91,6 +93,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let pickedImg = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerImg.contentMode = .scaleAspectFit
+            
             imagePickerImg.image = pickedImg
         }
         dismiss(animated: true, completion: nil)
@@ -130,7 +133,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             // generate unique id for image
             let uuid = NSUUID().uuidString.lowercased()
-            let thisImg = "\(uuid).jpg"
+            
+            if let uploadData = UIImagePNGRepresentation(imagePickerImg.image!) {
+                storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                    if error != nil {
+                        print(error)
+                        return
+                    } else {
+                        print(metadata)
+                    }
+                })
+            }
             
             pikPop.isHidden = true
             topBanner.isHidden = false
