@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import FirebaseDatabase
 import FirebaseStorage
+import Firebase
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -32,6 +33,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         mapView.delegate = self
         imagePick.delegate = self
+        
+        //auth user for uploading
+        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+            if error != nil {
+                print(error)
+                return
+            } else {
+                print("logged in")
+                let anon = user!.isAnonymous
+                let uid = user!.uid
+            }
+        })
+        
+        
         mapView.userTrackingMode = MKUserTrackingMode.follow
         
         geoFireReference = FIRDatabase.database().reference()
