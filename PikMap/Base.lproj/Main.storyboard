@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ogP-eF-lSZ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ogP-eF-lSZ">
                                 <frame key="frameInset" width="1000" height="1000"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-ql-nWt">
@@ -73,15 +73,27 @@
                                             <action selector="uploadPik:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S0J-Lx-1FL"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a caption!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kgU-Xk-ZIC" customClass="CustomTextField" customModule="PikMap" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.72776914267015713" green="0.72776914267015713" blue="0.72776914267015713" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="88v-yr-Ed4"/>
+                                            <constraint firstAttribute="height" constant="31" id="DZh-VW-IW0"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Nwz-XD-Pme" firstAttribute="leading" secondItem="iFp-R1-Dje" secondAttribute="leadingMargin" constant="117" id="89c-Gq-tRe"/>
                                     <constraint firstAttribute="height" constant="450" id="Bk0-hO-GlY"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="Nwz-XD-Pme" secondAttribute="trailing" constant="117" id="KFr-IP-ZtJ"/>
+                                    <constraint firstItem="kgU-Xk-ZIC" firstAttribute="centerX" secondItem="iFp-R1-Dje" secondAttribute="centerX" id="Q6S-Ou-Ud6"/>
                                     <constraint firstAttribute="width" constant="300" id="Sbg-cj-wsl"/>
                                     <constraint firstItem="rX5-Js-NBD" firstAttribute="top" secondItem="iFp-R1-Dje" secondAttribute="topMargin" constant="40" id="SuP-cE-7f5"/>
                                     <constraint firstItem="r0f-Ia-G3p" firstAttribute="trailing" secondItem="iFp-R1-Dje" secondAttribute="trailingMargin" id="Zwz-1h-dDl"/>
+                                    <constraint firstItem="kgU-Xk-ZIC" firstAttribute="top" secondItem="rX5-Js-NBD" secondAttribute="bottom" constant="71" id="iZl-yS-bqf"/>
                                     <constraint firstItem="Nwz-XD-Pme" firstAttribute="top" secondItem="iFp-R1-Dje" secondAttribute="topMargin" constant="75" id="jKz-Rp-YWU"/>
                                     <constraint firstItem="MNP-Bq-hhR" firstAttribute="bottom" secondItem="iFp-R1-Dje" secondAttribute="bottomMargin" id="q2K-Fk-RIW"/>
                                     <constraint firstItem="r0f-Ia-G3p" firstAttribute="top" secondItem="iFp-R1-Dje" secondAttribute="topMargin" id="sXE-aV-fhK"/>
@@ -132,6 +144,7 @@
                         <outlet property="imagePickerImg" destination="rX5-Js-NBD" id="1MH-Jl-vnc"/>
                         <outlet property="mapView" destination="ogP-eF-lSZ" id="Das-5Q-nhS"/>
                         <outlet property="pikPop" destination="iFp-R1-Dje" id="YYb-Ei-IQW"/>
+                        <outlet property="textField" destination="kgU-Xk-ZIC" id="vd4-hD-BX9"/>
                         <outlet property="topBanner" destination="sYN-Xs-Eeq" id="ma9-j6-kQt"/>
                     </connections>
                 </viewController>

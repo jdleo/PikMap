@@ -19,6 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var dropPikBtn: UIButton!
     @IBOutlet weak var pikPop: UIView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var textField: CustomTextField!
     
     var imageData: Any?
     
@@ -144,7 +145,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func uploadPik(_ sender: AnyObject) {
-        if imagePickerImg.image != UIImage(named: "photobtn.png") {
+        if imagePickerImg.image != UIImage(named: "photobtn.png") && textField.text != "" {
             
             if let uploadData = UIImageJPEGRepresentation(imagePickerImg.image!, 0.2) {
                 let iid = NSUUID().uuidString.lowercased()
@@ -162,8 +163,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             pikPop.isHidden = true
             topBanner.isHidden = false
             dropPikBtn.isHidden = false
+        } else if imagePickerImg.image == UIImage(named: "photobtn.png") {
+            
+            aC1.addAction(okAction)
+            self.present(aC1, animated: true, completion: nil)
+            
         }
-    
     }
     
 
