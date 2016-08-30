@@ -127,6 +127,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func uploadPik(_ sender: AnyObject) {
         if imagePickerImg.image != UIImage(named: "photobtn.png") {
+            
+            // generate unique id for image
+            let uuid = NSUUID().uuidString.lowercased()
+            let thisImg = "\(uuid).jpg"
+            
             pikPop.isHidden = true
             topBanner.isHidden = false
             dropPikBtn.isHidden = false
