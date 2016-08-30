@@ -19,6 +19,8 @@
 		45D8A56B1D7591330034094E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D8A56A1D7591330034094E /* Constants.swift */; };
 		45D8A5711D7593BF0034094E /* addIt.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D8A5701D7593BF0034094E /* addIt.png */; };
 		45D8A5731D7623E70034094E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D8A5721D7623E70034094E /* CustomTextField.swift */; };
+		45D8A57B1D762E240034094E /* PikAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D8A57A1D762E240034094E /* PikAnnotation.swift */; };
+		45D8A57D1D7641FD0034094E /* annz.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D8A57C1D7641FD0034094E /* annz.png */; };
 		45D996121D74FD7D006305E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D996111D74FD7D006305E0 /* AppDelegate.swift */; };
 		45D996141D74FD7D006305E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D996131D74FD7D006305E0 /* ViewController.swift */; };
 		45D996171D74FD7D006305E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D996151D74FD7D006305E0 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		45D8A56A1D7591330034094E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		45D8A5701D7593BF0034094E /* addIt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addIt.png; sourceTree = "<group>"; };
 		45D8A5721D7623E70034094E /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		45D8A57A1D762E240034094E /* PikAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PikAnnotation.swift; sourceTree = "<group>"; };
+		45D8A57C1D7641FD0034094E /* annz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = annz.png; sourceTree = "<group>"; };
 		45D9960E1D74FD7D006305E0 /* PikMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PikMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D996111D74FD7D006305E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45D996131D74FD7D006305E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,54 @@
 			path = Implementation;
 			sourceTree = "<group>";
 		};
+		45D8A5741D762D810034094E /* ImageStuff */ = {
+			isa = PBXGroup;
+			children = (
+				45D8A57C1D7641FD0034094E /* annz.png */,
+				45D996271D74FECA006305E0 /* add_photo.png */,
+				4568C55E1D7582E500E33CEC /* photobtn.png */,
+				4568C55C1D757FBF00E33CEC /* close.png */,
+				45D8A5701D7593BF0034094E /* addIt.png */,
+				45D996291D750234006305E0 /* add_feeling_btn@3x.png */,
+				45D996231D74FE33006305E0 /* add_photo_btn.png */,
+			);
+			name = ImageStuff;
+			sourceTree = "<group>";
+		};
+		45D8A5751D762D950034094E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4568C55A1D757EB300E33CEC /* MaterialView.swift */,
+				45D8A5721D7623E70034094E /* CustomTextField.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		45D8A5761D762DA60034094E /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				45D9962B1D7506C9006305E0 /* GoogleService-Info.plist */,
+				45D9961D1D74FD7D006305E0 /* Info.plist */,
+			);
+			name = Plists;
+			sourceTree = "<group>";
+		};
+		45D8A5781D762DC10034094E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45D996131D74FD7D006305E0 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		45D8A5791D762DD30034094E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				45D8A57A1D762E240034094E /* PikAnnotation.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		45D996051D74FD7D006305E0 = {
 			isa = PBXGroup;
 			children = (
@@ -140,24 +192,18 @@
 		45D996101D74FD7D006305E0 /* PikMap */ = {
 			isa = PBXGroup;
 			children = (
+				45D8A5791D762DD30034094E /* Model */,
+				45D8A5781D762DC10034094E /* Controller */,
+				45D8A5761D762DA60034094E /* Plists */,
+				45D8A5751D762D950034094E /* View */,
+				45D8A5741D762D810034094E /* ImageStuff */,
 				4568C5421D75086B00E33CEC /* GeoFire */,
 				45D996111D74FD7D006305E0 /* AppDelegate.swift */,
-				45D996131D74FD7D006305E0 /* ViewController.swift */,
 				45D996151D74FD7D006305E0 /* Main.storyboard */,
-				45D9962B1D7506C9006305E0 /* GoogleService-Info.plist */,
 				45D996181D74FD7D006305E0 /* Assets.xcassets */,
-				45D996271D74FECA006305E0 /* add_photo.png */,
-				4568C55E1D7582E500E33CEC /* photobtn.png */,
-				4568C55C1D757FBF00E33CEC /* close.png */,
-				45D8A5701D7593BF0034094E /* addIt.png */,
-				45D996291D750234006305E0 /* add_feeling_btn@3x.png */,
-				45D996231D74FE33006305E0 /* add_photo_btn.png */,
 				45D9961A1D74FD7D006305E0 /* LaunchScreen.storyboard */,
-				45D9961D1D74FD7D006305E0 /* Info.plist */,
 				4568C5591D75096C00E33CEC /* PikMap-Bridging-Header.h */,
-				4568C55A1D757EB300E33CEC /* MaterialView.swift */,
 				45D8A56A1D7591330034094E /* Constants.swift */,
-				45D8A5721D7623E70034094E /* CustomTextField.swift */,
 			);
 			path = PikMap;
 			sourceTree = "<group>";
@@ -251,6 +297,7 @@
 				4568C55F1D7582E500E33CEC /* photobtn.png in Resources */,
 				45D996171D74FD7D006305E0 /* Main.storyboard in Resources */,
 				45D996281D74FECA006305E0 /* add_photo.png in Resources */,
+				45D8A57D1D7641FD0034094E /* annz.png in Resources */,
 				45D9962C1D7506C9006305E0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +362,7 @@
 				4568C5561D75086B00E33CEC /* GFGeoHash.m in Sources */,
 				45D996121D74FD7D006305E0 /* AppDelegate.swift in Sources */,
 				45D8A5731D7623E70034094E /* CustomTextField.swift in Sources */,
+				45D8A57B1D762E240034094E /* PikAnnotation.swift in Sources */,
 				4568C5541D75086B00E33CEC /* GeoFire.m in Sources */,
 				4568C5571D75086B00E33CEC /* GFGeoHashQuery.m in Sources */,
 				4568C5581D75086B00E33CEC /* GFQuery.m in Sources */,

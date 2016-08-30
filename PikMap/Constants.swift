@@ -13,10 +13,11 @@ import FirebaseStorage
 let storage = FIRStorage.storage()
 let storageRef = storage.reference(forURL: "gs://pikmap-f133c.appspot.com")
 
-let aC = UIAlertController(title: "Oops", message: "You don't have a caption :(", preferredStyle: .alert)
 
-let aC1 = UIAlertController(title: "Oops", message: "You didn't select a picture", preferredStyle: .alert)
+let aC1 = UIAlertController(title: "Oops", message: "You need to have a picture and a caption! :(", preferredStyle: .alert)
 
-let okAction = UIAlertAction(title:"K", style: .cancel)
+let okAction = UIAlertAction(title:"K", style: .cancel) { (action) in
+    //idk
+}
 
 

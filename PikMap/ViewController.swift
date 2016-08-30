@@ -34,6 +34,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         mapView.delegate = self
         imagePick.delegate = self
+        aC1.addAction(okAction)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         
         //auth user for uploading
         FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
@@ -95,11 +99,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annoIdentifier = "Pikz"
         var annotationImg: MKAnnotationView?
         
         if annotation.isKind(of: MKUserLocation.self) {
             annotationImg = MKAnnotationView(annotation: annotation, reuseIdentifier: "User")
             annotationImg?.image = UIImage(named: "add_feeling_btn.png")
+        } else if let deqAnno = mapView.dequeueReusableAnnotationView(withIdentifier: "Pikz") {
+            annotationImg = deqAnno
+            annotationImg?.annotation = annotation
+        } else {
+            let av = MKAnnotationView(annotation: annotation, reuseIdentifier: annoIdentifier)
+            av.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            annotationImg = av
+        }
+        
+        if let annotationImg = annotationImg, let anno = annotation as? PikAnnotation {
+            
+            annotationImg.image = UIImage(named: "annz.png")
         }
         
         return annotationImg
@@ -117,6 +134,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+        showPiks(location: loc)
     }
     
     func dropPik(forLocation location:CLLocation, withImage imageId: String) {
@@ -155,20 +177,42 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         print(error)
                         return
                     } else {
+                        
+                        let loc = CLLocation(latitude: self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude)
+                        
+                        self.dropPik(forLocation: loc, withImage: iid)
                         print(metadata)
                     }
                 })
             }
             
+            
+            
             pikPop.isHidden = true
             topBanner.isHidden = false
             dropPikBtn.isHidden = false
-        } else if imagePickerImg.image == UIImage(named: "photobtn.png") {
-            
-            aC1.addAction(okAction)
+        } else {
+            //if user doesnt have text or pic
             self.present(aC1, animated: true, completion: nil)
             
         }
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func showPiks(location: CLLocation) {
+        let circleQuery = geoFire!.query(at: location, withRadius: 2.5)
+        
+        _ = circleQuery?.observe(GFEventType.keyEntered, with: { (iid, location) in
+            
+            if let iid = iid, let location = location {
+               let anno = PikAnnotation(coordinate: location.coordinate, iid: iid)
+                self.mapView.addAnnotation(anno)
+            }
+            
+        })
     }
     
 
