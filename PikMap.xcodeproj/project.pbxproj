@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2286523342D84D653A81DE14 /* Pods_PikMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0C0EAE94B06042D7830449 /* Pods_PikMap.framework */; };
+		4568C5541D75086B00E33CEC /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 4568C54B1D75086B00E33CEC /* GeoFire.m */; };
+		4568C5551D75086B00E33CEC /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4568C54D1D75086B00E33CEC /* GFBase32Utils.m */; };
+		4568C5561D75086B00E33CEC /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 4568C54F1D75086B00E33CEC /* GFGeoHash.m */; };
+		4568C5571D75086B00E33CEC /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4568C5511D75086B00E33CEC /* GFGeoHashQuery.m */; };
+		4568C5581D75086B00E33CEC /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4568C5531D75086B00E33CEC /* GFQuery.m */; };
 		45D996121D74FD7D006305E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D996111D74FD7D006305E0 /* AppDelegate.swift */; };
 		45D996141D74FD7D006305E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D996131D74FD7D006305E0 /* ViewController.swift */; };
 		45D996171D74FD7D006305E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D996151D74FD7D006305E0 /* Main.storyboard */; };
@@ -15,9 +21,28 @@
 		45D996241D74FE33006305E0 /* add_photo_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D996231D74FE33006305E0 /* add_photo_btn.png */; };
 		45D996281D74FECA006305E0 /* add_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D996271D74FECA006305E0 /* add_photo.png */; };
 		45D9962A1D750234006305E0 /* add_feeling_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D996291D750234006305E0 /* add_feeling_btn@3x.png */; };
+		45D9962C1D7506C9006305E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45D9962B1D7506C9006305E0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BDB34893F85F94648B23E2E /* Pods-PikMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PikMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PikMap/Pods-PikMap.debug.xcconfig"; sourceTree = "<group>"; };
+		3D0C0EAE94B06042D7830449 /* Pods_PikMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PikMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4568C5441D75086B00E33CEC /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
+		4568C5451D75086B00E33CEC /* GFCircleQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCircleQuery.h; sourceTree = "<group>"; };
+		4568C5461D75086B00E33CEC /* GFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFQuery.h; sourceTree = "<group>"; };
+		4568C5471D75086B00E33CEC /* GFRegionQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRegionQuery.h; sourceTree = "<group>"; };
+		4568C5481D75086B00E33CEC /* GeoFire-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire-Prefix.pch"; sourceTree = "<group>"; };
+		4568C54A1D75086B00E33CEC /* GeoFire+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire+Private.h"; sourceTree = "<group>"; };
+		4568C54B1D75086B00E33CEC /* GeoFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoFire.m; sourceTree = "<group>"; };
+		4568C54C1D75086B00E33CEC /* GFBase32Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFBase32Utils.h; sourceTree = "<group>"; };
+		4568C54D1D75086B00E33CEC /* GFBase32Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFBase32Utils.m; sourceTree = "<group>"; };
+		4568C54E1D75086B00E33CEC /* GFGeoHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHash.h; sourceTree = "<group>"; };
+		4568C54F1D75086B00E33CEC /* GFGeoHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHash.m; sourceTree = "<group>"; };
+		4568C5501D75086B00E33CEC /* GFGeoHashQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHashQuery.h; sourceTree = "<group>"; };
+		4568C5511D75086B00E33CEC /* GFGeoHashQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHashQuery.m; sourceTree = "<group>"; };
+		4568C5521D75086B00E33CEC /* GFQuery+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GFQuery+Private.h"; sourceTree = "<group>"; };
+		4568C5531D75086B00E33CEC /* GFQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFQuery.m; sourceTree = "<group>"; };
+		4568C5591D75096C00E33CEC /* PikMap-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PikMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		45D9960E1D74FD7D006305E0 /* PikMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PikMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D996111D74FD7D006305E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45D996131D74FD7D006305E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +53,8 @@
 		45D996231D74FE33006305E0 /* add_photo_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_photo_btn.png; sourceTree = "<group>"; };
 		45D996271D74FECA006305E0 /* add_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_photo.png; sourceTree = "<group>"; };
 		45D996291D750234006305E0 /* add_feeling_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_feeling_btn@3x.png"; sourceTree = "<group>"; };
+		45D9962B1D7506C9006305E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8C275A3C95503C6DE684F1B3 /* Pods-PikMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PikMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-PikMap/Pods-PikMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +62,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2286523342D84D653A81DE14 /* Pods_PikMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4568C5421D75086B00E33CEC /* GeoFire */ = {
+			isa = PBXGroup;
+			children = (
+				4568C5431D75086B00E33CEC /* API */,
+				4568C5481D75086B00E33CEC /* GeoFire-Prefix.pch */,
+				4568C5491D75086B00E33CEC /* Implementation */,
+			);
+			path = GeoFire;
+			sourceTree = "<group>";
+		};
+		4568C5431D75086B00E33CEC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4568C5441D75086B00E33CEC /* GeoFire.h */,
+				4568C5451D75086B00E33CEC /* GFCircleQuery.h */,
+				4568C5461D75086B00E33CEC /* GFQuery.h */,
+				4568C5471D75086B00E33CEC /* GFRegionQuery.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4568C5491D75086B00E33CEC /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				4568C54A1D75086B00E33CEC /* GeoFire+Private.h */,
+				4568C54B1D75086B00E33CEC /* GeoFire.m */,
+				4568C54C1D75086B00E33CEC /* GFBase32Utils.h */,
+				4568C54D1D75086B00E33CEC /* GFBase32Utils.m */,
+				4568C54E1D75086B00E33CEC /* GFGeoHash.h */,
+				4568C54F1D75086B00E33CEC /* GFGeoHash.m */,
+				4568C5501D75086B00E33CEC /* GFGeoHashQuery.h */,
+				4568C5511D75086B00E33CEC /* GFGeoHashQuery.m */,
+				4568C5521D75086B00E33CEC /* GFQuery+Private.h */,
+				4568C5531D75086B00E33CEC /* GFQuery.m */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
 		45D996051D74FD7D006305E0 = {
 			isa = PBXGroup;
 			children = (
 				45D996101D74FD7D006305E0 /* PikMap */,
 				45D9960F1D74FD7D006305E0 /* Products */,
+				4A6D2F19AC34E2A40C09A5E5 /* Pods */,
+				E27C6F12BABF6F54D42D842F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,17 +128,37 @@
 		45D996101D74FD7D006305E0 /* PikMap */ = {
 			isa = PBXGroup;
 			children = (
+				4568C5421D75086B00E33CEC /* GeoFire */,
 				45D996111D74FD7D006305E0 /* AppDelegate.swift */,
 				45D996131D74FD7D006305E0 /* ViewController.swift */,
 				45D996151D74FD7D006305E0 /* Main.storyboard */,
+				45D9962B1D7506C9006305E0 /* GoogleService-Info.plist */,
 				45D996181D74FD7D006305E0 /* Assets.xcassets */,
 				45D996271D74FECA006305E0 /* add_photo.png */,
 				45D996291D750234006305E0 /* add_feeling_btn@3x.png */,
 				45D996231D74FE33006305E0 /* add_photo_btn.png */,
 				45D9961A1D74FD7D006305E0 /* LaunchScreen.storyboard */,
 				45D9961D1D74FD7D006305E0 /* Info.plist */,
+				4568C5591D75096C00E33CEC /* PikMap-Bridging-Header.h */,
 			);
 			path = PikMap;
+			sourceTree = "<group>";
+		};
+		4A6D2F19AC34E2A40C09A5E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BDB34893F85F94648B23E2E /* Pods-PikMap.debug.xcconfig */,
+				8C275A3C95503C6DE684F1B3 /* Pods-PikMap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E27C6F12BABF6F54D42D842F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D0C0EAE94B06042D7830449 /* Pods_PikMap.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45D996201D74FD7D006305E0 /* Build configuration list for PBXNativeTarget "PikMap" */;
 			buildPhases = (
+				58A96DF5EA7F96DD40BC062A /* [CP] Check Pods Manifest.lock */,
 				45D9960A1D74FD7D006305E0 /* Sources */,
 				45D9960B1D74FD7D006305E0 /* Frameworks */,
 				45D9960C1D74FD7D006305E0 /* Resources */,
+				D60C4386A0EBCEDF294065B3 /* [CP] Embed Pods Frameworks */,
+				563FF5A852F28B9EE499B4BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,18 +230,72 @@
 				45D996191D74FD7D006305E0 /* Assets.xcassets in Resources */,
 				45D996171D74FD7D006305E0 /* Main.storyboard in Resources */,
 				45D996281D74FECA006305E0 /* add_photo.png in Resources */,
+				45D9962C1D7506C9006305E0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		563FF5A852F28B9EE499B4BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PikMap/Pods-PikMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58A96DF5EA7F96DD40BC062A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D60C4386A0EBCEDF294065B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PikMap/Pods-PikMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		45D9960A1D74FD7D006305E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4568C5551D75086B00E33CEC /* GFBase32Utils.m in Sources */,
 				45D996141D74FD7D006305E0 /* ViewController.swift in Sources */,
+				4568C5561D75086B00E33CEC /* GFGeoHash.m in Sources */,
 				45D996121D74FD7D006305E0 /* AppDelegate.swift in Sources */,
+				4568C5541D75086B00E33CEC /* GeoFire.m in Sources */,
+				4568C5571D75086B00E33CEC /* GFGeoHashQuery.m in Sources */,
+				4568C5581D75086B00E33CEC /* GFQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +416,7 @@
 		};
 		45D996211D74FD7D006305E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BDB34893F85F94648B23E2E /* Pods-PikMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
@@ -278,12 +424,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.John-Leonardo.PikMap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PikMap/PikMap-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		45D996221D74FD7D006305E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C275A3C95503C6DE684F1B3 /* Pods-PikMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
@@ -291,6 +439,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.John-Leonardo.PikMap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PikMap/PikMap-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -314,6 +463,7 @@
 				45D996221D74FD7D006305E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

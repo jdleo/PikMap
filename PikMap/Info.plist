@@ -42,6 +42,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Can we use your location?</string>
+	<string>Mind if I use your location? The app is way more fun if I can!</string>
 </dict>
 </plist>

@@ -14,6 +14,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var mapCentered = false
+    var geoFire: GeoFire!
     
     override func viewDidLoad() {
         super.viewDidLoad()
