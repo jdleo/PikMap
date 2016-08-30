@@ -8,19 +8,25 @@
 
 import UIKit
 import MapKit
+import FirebaseDatabase
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    @IBOutlet weak var pikPop: UIView!
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var mapCentered = false
     var geoFire: GeoFire!
+    var geoFireReference: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapView.delegate = self
         mapView.userTrackingMode = MKUserTrackingMode.follow
+        
+        geoFireReference = FIRDatabase.database().reference()
+        geoFire = GeoFire(firebaseRef: geoFireReference)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,10 +80,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         return annotationImg
     }
     
+    func dropPik(forLocation location:CLLocation, image: UIImage) {
+        //todo: select image to assign to pin
+    }
+    
     @IBAction func postPik(_ sender: AnyObject) {
-        
+        pikPop.isHidden = false
     }
 
+    @IBAction func closePikPop(_ sender: AnyObject) {
+        pikPop.isHidden = true
+    }
 
 }
 

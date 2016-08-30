@@ -19,7 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ogP-eF-lSZ"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ogP-eF-lSZ">
+                                <frame key="frameInset" width="1000" height="1000"/>
+                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-ql-nWt">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="WgM-ko-cUZ"/>
@@ -30,12 +32,38 @@
                                     <action selector="postPik:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iNo-dw-oRy"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFp-R1-Dje">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0f-Ia-G3p">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="KId-5Q-GNI"/>
+                                            <constraint firstAttribute="width" constant="36" id="sce-c4-jwz"/>
+                                        </constraints>
+                                        <state key="normal" image="close.png"/>
+                                        <connections>
+                                            <action selector="closePikPop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Wa-ZU-kD3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="r0f-Ia-G3p" firstAttribute="trailing" secondItem="iFp-R1-Dje" secondAttribute="trailingMargin" id="7i9-oN-wbL"/>
+                                    <constraint firstItem="r0f-Ia-G3p" firstAttribute="top" secondItem="iFp-R1-Dje" secondAttribute="topMargin" id="Ps6-wP-tbk"/>
+                                    <constraint firstAttribute="width" constant="250" id="XRA-W1-YTT"/>
+                                    <constraint firstAttribute="height" constant="375" id="bYb-o4-yg2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ogP-eF-lSZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="28Q-cE-goC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BeK-ql-nWt" secondAttribute="bottom" constant="25" id="2Ew-Ge-wh1"/>
                             <constraint firstItem="BeK-ql-nWt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5SA-Vr-lVU"/>
+                            <constraint firstItem="iFp-R1-Dje" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="74w-a9-eC5"/>
+                            <constraint firstItem="iFp-R1-Dje" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i7p-B8-CvO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ogP-eF-lSZ" secondAttribute="bottom" id="ocO-ei-3FY"/>
                             <constraint firstAttribute="trailing" secondItem="ogP-eF-lSZ" secondAttribute="trailing" id="s0k-Qu-Mqg"/>
                             <constraint firstItem="ogP-eF-lSZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="z6k-DZ-OLb"/>
@@ -43,6 +71,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="ogP-eF-lSZ" id="Das-5Q-nhS"/>
+                        <outlet property="pikPop" destination="iFp-R1-Dje" id="YYb-Ei-IQW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -52,5 +81,6 @@
     </scenes>
     <resources>
         <image name="add_photo.png" width="60" height="57"/>
+        <image name="close.png" width="36" height="36"/>
     </resources>
 </document>
