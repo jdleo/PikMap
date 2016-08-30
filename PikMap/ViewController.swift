@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import FirebaseDatabase
+import FirebaseStorage
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -17,6 +18,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var dropPikBtn: UIButton!
     @IBOutlet weak var pikPop: UIView!
     @IBOutlet weak var mapView: MKMapView!
+    
     let locationManager = CLLocationManager()
     var mapCentered = false
     var geoFire: GeoFire!
@@ -98,8 +100,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
-    func dropPik(forLocation location:CLLocation, image: UIImage) {
-        //todo: select image to assign to pin
+    func dropPik(forLocation location:CLLocation, withImage imageId: String) {
+        
+        
+        geoFire.setLocation(location, forKey: imageId)
     }
     
     @IBAction func postPik(_ sender: AnyObject) {
@@ -120,6 +124,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         present(imagePick, animated: true, completion: nil)
     }
+    
+    @IBAction func uploadPik(_ sender: AnyObject) {
+        if imagePickerImg.image != UIImage(named: "photobtn.png") {
+            pikPop.isHidden = true
+            topBanner.isHidden = false
+            dropPikBtn.isHidden = false
+        }
+    
+    }
+    
 
 }
 

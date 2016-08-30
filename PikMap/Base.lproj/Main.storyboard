@@ -63,6 +63,16 @@
                                             <action selector="imagePickerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Azs-ke-yoh"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNP-Bq-hhR">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="41O-Hn-1gF"/>
+                                            <constraint firstAttribute="width" constant="50" id="kVe-Un-jeI"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="addIt.png"/>
+                                        <connections>
+                                            <action selector="uploadPik:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S0J-Lx-1FL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -73,8 +83,10 @@
                                     <constraint firstItem="rX5-Js-NBD" firstAttribute="top" secondItem="iFp-R1-Dje" secondAttribute="topMargin" constant="40" id="SuP-cE-7f5"/>
                                     <constraint firstItem="r0f-Ia-G3p" firstAttribute="trailing" secondItem="iFp-R1-Dje" secondAttribute="trailingMargin" id="Zwz-1h-dDl"/>
                                     <constraint firstItem="Nwz-XD-Pme" firstAttribute="top" secondItem="iFp-R1-Dje" secondAttribute="topMargin" constant="75" id="jKz-Rp-YWU"/>
+                                    <constraint firstItem="MNP-Bq-hhR" firstAttribute="bottom" secondItem="iFp-R1-Dje" secondAttribute="bottomMargin" id="q2K-Fk-RIW"/>
                                     <constraint firstItem="r0f-Ia-G3p" firstAttribute="top" secondItem="iFp-R1-Dje" secondAttribute="topMargin" id="sXE-aV-fhK"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="rX5-Js-NBD" secondAttribute="trailing" constant="82" id="tBI-u9-UlT"/>
+                                    <constraint firstItem="MNP-Bq-hhR" firstAttribute="centerX" secondItem="iFp-R1-Dje" secondAttribute="centerX" id="v3m-Xu-X78"/>
                                     <constraint firstItem="rX5-Js-NBD" firstAttribute="leading" secondItem="iFp-R1-Dje" secondAttribute="leadingMargin" constant="82" id="ypP-Du-1hi"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -129,6 +141,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addIt.png" width="45" height="45"/>
         <image name="add_photo.png" width="60" height="57"/>
         <image name="close.png" width="36" height="36"/>
         <image name="photobtn.png" width="162" height="186"/>

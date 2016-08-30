@@ -16,6 +16,8 @@
 		4568C55B1D757EB300E33CEC /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568C55A1D757EB300E33CEC /* MaterialView.swift */; };
 		4568C55D1D757FBF00E33CEC /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4568C55C1D757FBF00E33CEC /* close.png */; };
 		4568C55F1D7582E500E33CEC /* photobtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4568C55E1D7582E500E33CEC /* photobtn.png */; };
+		45D8A56B1D7591330034094E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D8A56A1D7591330034094E /* Constants.swift */; };
+		45D8A5711D7593BF0034094E /* addIt.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D8A5701D7593BF0034094E /* addIt.png */; };
 		45D996121D74FD7D006305E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D996111D74FD7D006305E0 /* AppDelegate.swift */; };
 		45D996141D74FD7D006305E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D996131D74FD7D006305E0 /* ViewController.swift */; };
 		45D996171D74FD7D006305E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D996151D74FD7D006305E0 /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		4568C55A1D757EB300E33CEC /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		4568C55C1D757FBF00E33CEC /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		4568C55E1D7582E500E33CEC /* photobtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photobtn.png; sourceTree = "<group>"; };
+		45D8A56A1D7591330034094E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		45D8A5701D7593BF0034094E /* addIt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addIt.png; sourceTree = "<group>"; };
 		45D9960E1D74FD7D006305E0 /* PikMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PikMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D996111D74FD7D006305E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45D996131D74FD7D006305E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -143,12 +147,14 @@
 				45D996271D74FECA006305E0 /* add_photo.png */,
 				4568C55E1D7582E500E33CEC /* photobtn.png */,
 				4568C55C1D757FBF00E33CEC /* close.png */,
+				45D8A5701D7593BF0034094E /* addIt.png */,
 				45D996291D750234006305E0 /* add_feeling_btn@3x.png */,
 				45D996231D74FE33006305E0 /* add_photo_btn.png */,
 				45D9961A1D74FD7D006305E0 /* LaunchScreen.storyboard */,
 				45D9961D1D74FD7D006305E0 /* Info.plist */,
 				4568C5591D75096C00E33CEC /* PikMap-Bridging-Header.h */,
 				4568C55A1D757EB300E33CEC /* MaterialView.swift */,
+				45D8A56A1D7591330034094E /* Constants.swift */,
 			);
 			path = PikMap;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D8A5711D7593BF0034094E /* addIt.png in Resources */,
 				4568C55D1D757FBF00E33CEC /* close.png in Resources */,
 				45D9961C1D74FD7D006305E0 /* LaunchScreen.storyboard in Resources */,
 				45D9962A1D750234006305E0 /* add_feeling_btn@3x.png in Resources */,
@@ -308,6 +315,7 @@
 				4568C5571D75086B00E33CEC /* GFGeoHashQuery.m in Sources */,
 				4568C5581D75086B00E33CEC /* GFQuery.m in Sources */,
 				4568C55B1D757EB300E33CEC /* MaterialView.swift in Sources */,
+				45D8A56B1D7591330034094E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
