@@ -10,19 +10,23 @@ import UIKit
 import MapKit
 import FirebaseDatabase
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    @IBOutlet weak var imagePickerImg: UIImageView!
+    @IBOutlet weak var dropPikBtn: UIButton!
     @IBOutlet weak var pikPop: UIView!
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var mapCentered = false
     var geoFire: GeoFire!
     var geoFireReference: FIRDatabaseReference!
+    let imagePick = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapView.delegate = self
+        imagePick.delegate = self
         mapView.userTrackingMode = MKUserTrackingMode.follow
         
         geoFireReference = FIRDatabase.database().reference()
@@ -80,16 +84,38 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         return annotationImg
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let pickedImg = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagePickerImg.contentMode = .scaleAspectFit
+            imagePickerImg.image = pickedImg
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func dropPik(forLocation location:CLLocation, image: UIImage) {
         //todo: select image to assign to pin
     }
     
     @IBAction func postPik(_ sender: AnyObject) {
         pikPop.isHidden = false
+        dropPikBtn.isHidden = true
     }
 
     @IBAction func closePikPop(_ sender: AnyObject) {
         pikPop.isHidden = true
+        dropPikBtn.isHidden = false
+        imagePickerImg.image = UIImage(named: "photobtn.png")
+    }
+    @IBAction func imagePickerBtn(_ sender: AnyObject) {
+        imagePick.allowsEditing = false
+        imagePick.sourceType = .photoLibrary
+        
+        present(imagePick, animated: true, completion: nil)
     }
 
 }

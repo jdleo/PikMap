@@ -43,5 +43,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Mind if I use your location? The app is way more fun if I can!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Mind if I have access to your photos? It&apos;s only to post them!</string>
 </dict>
 </plist>

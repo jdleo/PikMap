@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ogP-eF-lSZ">
@@ -44,13 +44,38 @@
                                             <action selector="closePikPop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Wa-ZU-kD3"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photobtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="rX5-Js-NBD">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="Hvc-Py-Hz4"/>
+                                            <constraint firstAttribute="height" constant="120" id="h5a-Ce-jLO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwz-XD-Pme">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="mIq-fa-w4j"/>
+                                            <constraint firstAttribute="height" constant="50" id="zCe-vI-w0O"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="imagePickerBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Azs-ke-yoh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="r0f-Ia-G3p" firstAttribute="trailing" secondItem="iFp-R1-Dje" secondAttribute="trailingMargin" id="7i9-oN-wbL"/>
-                                    <constraint firstItem="r0f-Ia-G3p" firstAttribute="top" secondItem="iFp-R1-Dje" secondAttribute="topMargin" id="Ps6-wP-tbk"/>
-                                    <constraint firstAttribute="width" constant="250" id="XRA-W1-YTT"/>
-                                    <constraint firstAttribute="height" constant="375" id="bYb-o4-yg2"/>
+                                    <constraint firstItem="Nwz-XD-Pme" firstAttribute="leading" secondItem="iFp-R1-Dje" secondAttribute="leadingMargin" constant="117" id="89c-Gq-tRe"/>
+                                    <constraint firstAttribute="height" constant="450" id="Bk0-hO-GlY"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Nwz-XD-Pme" secondAttribute="trailing" constant="117" id="KFr-IP-ZtJ"/>
+                                    <constraint firstAttribute="width" constant="300" id="Sbg-cj-wsl"/>
+                                    <constraint firstItem="rX5-Js-NBD" firstAttribute="top" secondItem="iFp-R1-Dje" secondAttribute="topMargin" constant="40" id="SuP-cE-7f5"/>
+                                    <constraint firstItem="r0f-Ia-G3p" firstAttribute="trailing" secondItem="iFp-R1-Dje" secondAttribute="trailingMargin" id="Zwz-1h-dDl"/>
+                                    <constraint firstItem="Nwz-XD-Pme" firstAttribute="top" secondItem="iFp-R1-Dje" secondAttribute="topMargin" constant="75" id="jKz-Rp-YWU"/>
+                                    <constraint firstItem="r0f-Ia-G3p" firstAttribute="top" secondItem="iFp-R1-Dje" secondAttribute="topMargin" id="sXE-aV-fhK"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="rX5-Js-NBD" secondAttribute="trailing" constant="82" id="tBI-u9-UlT"/>
+                                    <constraint firstItem="rX5-Js-NBD" firstAttribute="leading" secondItem="iFp-R1-Dje" secondAttribute="leadingMargin" constant="82" id="ypP-Du-1hi"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
@@ -62,25 +87,28 @@
                             <constraint firstItem="ogP-eF-lSZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="28Q-cE-goC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BeK-ql-nWt" secondAttribute="bottom" constant="25" id="2Ew-Ge-wh1"/>
                             <constraint firstItem="BeK-ql-nWt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5SA-Vr-lVU"/>
-                            <constraint firstItem="iFp-R1-Dje" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="74w-a9-eC5"/>
-                            <constraint firstItem="iFp-R1-Dje" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i7p-B8-CvO"/>
+                            <constraint firstItem="iFp-R1-Dje" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="U1i-8r-azJ"/>
+                            <constraint firstItem="iFp-R1-Dje" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a2w-gE-yXJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ogP-eF-lSZ" secondAttribute="bottom" id="ocO-ei-3FY"/>
                             <constraint firstAttribute="trailing" secondItem="ogP-eF-lSZ" secondAttribute="trailing" id="s0k-Qu-Mqg"/>
                             <constraint firstItem="ogP-eF-lSZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="z6k-DZ-OLb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dropPikBtn" destination="BeK-ql-nWt" id="9R7-q1-VxH"/>
+                        <outlet property="imagePickerImg" destination="rX5-Js-NBD" id="1MH-Jl-vnc"/>
                         <outlet property="mapView" destination="ogP-eF-lSZ" id="Das-5Q-nhS"/>
                         <outlet property="pikPop" destination="iFp-R1-Dje" id="YYb-Ei-IQW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="131.78410794602701"/>
+            <point key="canvasLocation" x="135.19999999999999" y="130.88455772113943"/>
         </scene>
     </scenes>
     <resources>
         <image name="add_photo.png" width="60" height="57"/>
         <image name="close.png" width="36" height="36"/>
+        <image name="photobtn.png" width="162" height="186"/>
     </resources>
 </document>
