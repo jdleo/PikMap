@@ -29,6 +29,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var geoFireReference: FIRDatabaseReference!
     let imagePick = UIImagePickerController()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -116,7 +117,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let annotationImg = annotationImg, let anno = annotation as? PikAnnotation {
             
-            annotationImg.image = UIImage(named: "annz.png")
+            annotationImg.image = UIImage(named: "annoimg2.png")
         }
         
         return annotationImg
@@ -145,6 +146,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         
         geoFire.setLocation(location, forKey: imageId)
+        
     }
     
     @IBAction func postPik(_ sender: AnyObject) {
@@ -171,8 +173,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             if let uploadData = UIImageJPEGRepresentation(imagePickerImg.image!, 0.2) {
                 let iid = NSUUID().uuidString.lowercased()
+                
+                var meta = FIRStorageMetadata()
+                meta.customMetadata = ["caption" : self.textField.text!]
+                
                 let imageRef = storageRef.child(iid)
-                imageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                imageRef.put(uploadData, metadata: meta, completion: { (metadata, error) in
                     if error != nil {
                         print(error)
                         return
@@ -182,12 +188,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         
                         self.dropPik(forLocation: loc, withImage: iid)
                         print(metadata)
+                        
                     }
                 })
             }
             
             
-            
+            self.textField.text = ""
+            imagePickerImg.image = UIImage(named: "photobtn.png") //test
             pikPop.isHidden = true
             topBanner.isHidden = false
             dropPikBtn.isHidden = false
@@ -214,6 +222,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
         })
     }
+    
     
 
 }
