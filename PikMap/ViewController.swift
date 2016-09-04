@@ -125,7 +125,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             annotationImg.image = UIImage(named: "annoimg2.png")
             let btn = UIButton()
             btn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-            //btn.setImage(UIImage(named: "searchbutton.png"), for: .normal)
+            btn.setImage(UIImage(named: "searchbutton.png"), for: .normal)
             annotationImg.rightCalloutAccessoryView = btn
         
         }

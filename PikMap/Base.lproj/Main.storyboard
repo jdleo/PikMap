@@ -191,19 +191,21 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="RV6-vW-yBF" firstAttribute="centerX" secondItem="uEs-QB-rlQ" secondAttribute="centerX" id="7aO-AV-94q"/>
-                                    <constraint firstAttribute="height" constant="50" id="EZX-Kz-bsb"/>
+                                    <constraint firstItem="qlL-Su-ulc" firstAttribute="top" secondItem="uEs-QB-rlQ" secondAttribute="topMargin" constant="11" id="Bwc-pP-nSm"/>
                                     <constraint firstItem="qlL-Su-ulc" firstAttribute="leading" secondItem="uEs-QB-rlQ" secondAttribute="leadingMargin" id="Q5d-T7-hwy"/>
-                                    <constraint firstItem="RV6-vW-yBF" firstAttribute="top" secondItem="uEs-QB-rlQ" secondAttribute="topMargin" constant="6" id="dEX-MM-yf1"/>
-                                    <constraint firstItem="qlL-Su-ulc" firstAttribute="top" secondItem="uEs-QB-rlQ" secondAttribute="topMargin" constant="6" id="q6n-Ji-bfz"/>
+                                    <constraint firstItem="RV6-vW-yBF" firstAttribute="top" secondItem="uEs-QB-rlQ" secondAttribute="topMargin" constant="13" id="fgk-Aq-au4"/>
+                                    <constraint firstAttribute="height" constant="61" id="mO6-jZ-djy"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photobtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nv4-b2-pTu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="photobtn.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nv4-b2-pTu">
+                                <frame key="frameInset" minX="67.5" minY="88" width="240" height="266"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="USI-0x-d36"/>
                                     <constraint firstAttribute="height" constant="266" id="szf-l2-Koq"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Loading..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IZb-QP-sc6">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Loading..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IZb-QP-sc6">
+                                <frame key="frameInset" minX="67.5" minY="374" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="VwY-25-Yg9"/>
