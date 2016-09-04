@@ -111,17 +111,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             annotationImg?.annotation = annotation
         } else {
             let av = MKAnnotationView(annotation: annotation, reuseIdentifier: annoIdentifier)
-            av.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            av.rightCalloutAccessoryView = UIButton(type: .custom)
             annotationImg = av
         }
         
         if let annotationImg = annotationImg, let anno = annotation as? PikAnnotation {
             
+            annotationImg.canShowCallout = true
             annotationImg.image = UIImage(named: "annoimg2.png")
+            let btn = UIButton()
+            btn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            //btn.setImage(UIImage(named: "searchbutton.png"), for: .normal)
+            annotationImg.rightCalloutAccessoryView = btn
         }
         
         return annotationImg
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToPik" {
+            var svc = segue.destination as! PikController
+            svc.segId = "test"
+            
+        }
+    }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -148,6 +162,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         geoFire.setLocation(location, forKey: imageId)
         
     }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let anno = view.annotation as? PikAnnotation {
+
+            
+            self.performSegue(withIdentifier: "goToPik", sender: self)
+        }
+    }
+    
     
     @IBAction func postPik(_ sender: AnyObject) {
         topBanner.isHidden = true
