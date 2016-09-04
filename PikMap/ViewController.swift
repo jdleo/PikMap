@@ -28,6 +28,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var geoFire: GeoFire!
     var geoFireReference: FIRDatabaseReference!
     let imagePick = UIImagePickerController()
+    var tempId: String?
+    
+
+    
+    
     
     
     override func viewDidLoad() {
@@ -35,7 +40,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         mapView.delegate = self
         imagePick.delegate = self
-        aC1.addAction(okAction)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
@@ -123,6 +127,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             btn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             //btn.setImage(UIImage(named: "searchbutton.png"), for: .normal)
             annotationImg.rightCalloutAccessoryView = btn
+        
         }
         
         return annotationImg
@@ -131,7 +136,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToPik" {
             var svc = segue.destination as! PikController
-            svc.segId = "test"
+            svc.segId = tempId
             
         }
     }
@@ -166,7 +171,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let anno = view.annotation as? PikAnnotation {
 
-            
+            tempId = anno.iid
             self.performSegue(withIdentifier: "goToPik", sender: self)
         }
     }
@@ -224,6 +229,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             dropPikBtn.isHidden = false
         } else {
             //if user doesnt have text or pic
+            let aC1 = UIAlertController(title: "Oops", message: "You need to have a picture and a caption! :(", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title:"K", style: .cancel) { (action) in
+                //idk
+            }
+            aC1.addAction(okAction)
             self.present(aC1, animated: true, completion: nil)
             
         }
