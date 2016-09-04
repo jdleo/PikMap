@@ -211,10 +211,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         print(error)
                         return
                     } else {
+                        let loc: CLLocation?
                         
-                        let loc = CLLocation(latitude: self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude)
-                        
-                        self.dropPik(forLocation: loc, withImage: iid)
+                        let lat = self.locationManager.location?.coordinate.latitude
+                        let lon = self.locationManager.location?.coordinate.longitude
+                        if lat != nil {
+                            loc = CLLocation(latitude: lat!, longitude: lon!)
+                        } else {
+                            loc = CLLocation(latitude: self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude)
+                        }
+                        self.dropPik(forLocation: loc!, withImage: iid)
                         print(metadata)
                         
                     }
