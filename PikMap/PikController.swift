@@ -17,7 +17,33 @@ class PikController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PikCaption.text = segId
+        
+        let pathRef = storageRef.child(segId)
+        let localURL: NSURL! = NSURL(string: "file:///local/images/\(segId).jpg")
+        
+        pathRef.metadata { (metadata, error) -> Void in
+            if (error != nil) {
+                print(error)
+            } else {
+                let meta = metadata?.customMetadata
+                let caption = meta?["caption"]
+                self.PikCaption.text = caption
+                
+                
+                
+            }
+        }
+        
+        pathRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            if (error != nil) {
+                print(error)
+            } else {
+                // Data returned and converted to our UImage
+                self.PikImg.image = UIImage(data: data!)
+            }
+        }
+        
+        
     }
 
 
