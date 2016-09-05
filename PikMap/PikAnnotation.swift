@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 
+//custom class for our annotations. makes life way easier
 class PikAnnotation: NSObject, MKAnnotation {
     
     var coordinate = CLLocationCoordinate2D()
