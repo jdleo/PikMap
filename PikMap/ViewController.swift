@@ -41,6 +41,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         mapView.delegate = self
         imagePick.delegate = self
         
+        //to dismiss the keyboard when we tap away from it
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
@@ -67,6 +68,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         locationAuthStatus()
     }
     
+    //authorize us for using user location
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             mapView.showsUserLocation = true
@@ -78,7 +80,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // pointless boilerplate code
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -121,6 +123,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let annotationImg = annotationImg, let anno = annotation as? PikAnnotation {
             
+            //if annotation is NOT user, then make it have these properties
             annotationImg.canShowCallout = true
             annotationImg.image = UIImage(named: "annoimg2.png")
             let btn = UIButton()
@@ -133,6 +136,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return annotationImg
     }
     
+    //passing the segue ID over to the next VC, so it knows which pic/caption to display
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToPik" {
             var svc = segue.destination as! PikController
@@ -141,7 +145,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    
+    //boilerplate imagepicker stuff
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let pickedImg = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -156,11 +160,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
+    //when region changes, show piks in radius
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         showPiks(location: loc)
     }
     
+    //GeoFire in action. this creates a database entry with the long/lat
     func dropPik(forLocation location:CLLocation, withImage imageId: String) {
         
         
@@ -168,6 +174,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
+    //when callout is tapped, segue over to vc that has the pik/caption
+    //set tempId to the iid from the annotation
+    //this tells us which pic were actually viewing
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let anno = view.annotation as? PikAnnotation {
 
@@ -197,14 +206,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func uploadPik(_ sender: AnyObject) {
+        //first, we're gonna check if it has an image selected, and caption isnt nil
         if imagePickerImg.image != UIImage(named: "photobtn.png") && textField.text != "" {
             
             if let uploadData = UIImageJPEGRepresentation(imagePickerImg.image!, 0.2) {
+                //create a random UID for the image. helps SO much.
                 let iid = NSUUID().uuidString.lowercased()
                 
+                //setting customMetadata to hold our caption in the photo
                 var meta = FIRStorageMetadata()
                 meta.customMetadata = ["caption" : self.textField.text!]
                 
+                //uploading photo to Firebase. It will name the photo the ID that it gen'd
                 let imageRef = storageRef.child(iid)
                 imageRef.put(uploadData, metadata: meta, completion: { (metadata, error) in
                     if error != nil {
@@ -212,6 +225,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         return
                     } else {
                         let loc: CLLocation?
+                        
+                        /*** Okay, I know this is some really weird error handling,
+                        but basically were gonna try to get the current user location
+                         and for some reason if it fails, were just gonna get the map center and use that as the location. if lat isnt nil, then we know long wont be either, so that's what that's all about***/
                         
                         let lat = self.locationManager.location?.coordinate.latitude
                         let lon = self.locationManager.location?.coordinate.longitude
@@ -227,9 +244,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 })
             }
             
-            
+            //revert UI back to defaults when were done uploading, and close popup
             self.textField.text = ""
-            imagePickerImg.image = UIImage(named: "photobtn.png") //test
+            imagePickerImg.image = UIImage(named: "photobtn.png")
             pikPop.isHidden = true
             topBanner.isHidden = false
             dropPikBtn.isHidden = false
@@ -238,7 +255,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let aC1 = UIAlertController(title: "Oops", message: "You need to have a picture and a caption! :(", preferredStyle: .alert)
             
             let okAction = UIAlertAction(title:"K", style: .cancel) { (action) in
-                //idk
+                //idk...
             }
             aC1.addAction(okAction)
             self.present(aC1, animated: true, completion: nil)
@@ -250,6 +267,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.endEditing(true)
     }
     
+    //showing piks in the radius defined, and making a query using GeoFire 
     func showPiks(location: CLLocation) {
         let circleQuery = geoFire!.query(at: location, withRadius: 2.5)
         

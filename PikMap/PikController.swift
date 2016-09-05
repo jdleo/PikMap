@@ -18,13 +18,16 @@ class PikController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //segId is passed from last VC.. each pik has unique segId
         let pathRef = storageRef.child(segId)
         let localURL: NSURL! = NSURL(string: "file:///local/images/\(segId).jpg")
         
+        //grabbing the pic caption stored in metadata in fb storage
         pathRef.metadata { (metadata, error) -> Void in
             if (error != nil) {
                 print(error)
             } else {
+                
                 let meta = metadata?.customMetadata
                 let caption = meta?["caption"]
                 self.PikCaption.text = caption
@@ -34,6 +37,7 @@ class PikController: UIViewController {
             }
         }
         
+        //grabbing img from fb storage and converting to uiimage
         pathRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
             if (error != nil) {
                 print(error)
@@ -46,7 +50,7 @@ class PikController: UIViewController {
         
     }
 
-
+    //button to go back
     @IBAction func goBack(_ sender: AnyObject) {
     
         self.performSegue(withIdentifier: "goBack", sender: self)
