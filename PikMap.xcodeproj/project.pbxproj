@@ -61,6 +61,7 @@
 		4568C55A1D757EB300E33CEC /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		4568C55C1D757FBF00E33CEC /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		4568C55E1D7582E500E33CEC /* photobtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photobtn.png; sourceTree = "<group>"; };
+		45D0A68F1D7D0E7D00F11E97 /* PikMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PikMap.entitlements; sourceTree = "<group>"; };
 		45D8A56A1D7591330034094E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		45D8A5701D7593BF0034094E /* addIt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addIt.png; sourceTree = "<group>"; };
 		45D8A5721D7623E70034094E /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -207,6 +208,7 @@
 		45D996101D74FD7D006305E0 /* PikMap */ = {
 			isa = PBXGroup;
 			children = (
+				45D0A68F1D7D0E7D00F11E97 /* PikMap.entitlements */,
 				45D8A5791D762DD30034094E /* Model */,
 				45D8A5781D762DC10034094E /* Controller */,
 				45D8A5761D762DA60034094E /* Plists */,
@@ -277,6 +279,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = QKVT7MD2SK;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -511,6 +518,7 @@
 			baseConfigurationReference = 0BDB34893F85F94648B23E2E /* Pods-PikMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PikMap/PikMap.entitlements;
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
 				INFOPLIST_FILE = PikMap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -527,6 +535,7 @@
 			baseConfigurationReference = 8C275A3C95503C6DE684F1B3 /* Pods-PikMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PikMap/PikMap.entitlements;
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
 				INFOPLIST_FILE = PikMap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

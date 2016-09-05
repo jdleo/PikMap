@@ -48,7 +48,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //auth user for uploading
         FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
             if error != nil {
-                print(error)
+                print("starterror \(error) enderror")
                 return
             } else {
                 print("logged in")
